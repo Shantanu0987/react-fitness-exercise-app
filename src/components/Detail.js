@@ -5,7 +5,7 @@ import TargetImage from "../assets/icons/target.png";
 import EquipmentImage from "../assets/icons/equipment.png";
 
 function Detail({ exerciseDetail }) {
-  const { bodyPart, name, target, equipment } = exerciseDetail;
+  const { bodyPart, name, target, equipment, description } = exerciseDetail;
   const extraDetail = [
     {
       icon: BodyPartImage,
@@ -36,10 +36,7 @@ function Detail({ exerciseDetail }) {
         <Typography variant="h3" textTransform={"capitalize"}>
           {name}
         </Typography>
-        <Typography variant="h6">
-          Exercises keep you strong. {name} bup is one of the best exercises to
-          {target} your abs. It will help you improve your mood and fain energy.
-        </Typography>
+        <Typography variant="h5">{description}</Typography>
         {extraDetail.map((item) => (
           <Stack
             key={item.name}
